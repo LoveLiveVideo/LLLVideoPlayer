@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855F97D1E11258A0032F04B /* AppDelegate.swift */; };
-		5855F9801E11258A0032F04B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855F97F1E11258A0032F04B /* ViewController.swift */; };
 		5855F9831E11258A0032F04B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9811E11258A0032F04B /* Main.storyboard */; };
 		5855F9851E11258A0032F04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9841E11258A0032F04B /* Assets.xcassets */; };
 		5855F9881E11258A0032F04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9861E11258A0032F04B /* LaunchScreen.storyboard */; };
@@ -26,12 +25,12 @@
 		586576531E1525E600BB7B02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576521E1525E600BB7B02 /* QuartzCore.framework */; };
 		586576551E1525EC00BB7B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576541E1525EC00BB7B02 /* UIKit.framework */; };
 		586576571E1525F100BB7B02 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576561E1525F100BB7B02 /* VideoToolbox.framework */; };
+		DD227C2B1E164A490028FBF8 /* LLLTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5855F97A1E11258A0032F04B /* LLLVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLLVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5855F97D1E11258A0032F04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5855F97F1E11258A0032F04B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5855F9821E11258A0032F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5855F9841E11258A0032F04B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5855F9871E11258A0032F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		586576521E1525E600BB7B02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		586576541E1525EC00BB7B02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586576561E1525F100BB7B02 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLTabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,9 @@
 		5855F97C1E11258A0032F04B /* LLLVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				DD227C2C1E164CE60028FBF8 /* Live */,
 				5855F97D1E11258A0032F04B /* AppDelegate.swift */,
-				5855F97F1E11258A0032F04B /* ViewController.swift */,
+				DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */,
 				5855F9811E11258A0032F04B /* Main.storyboard */,
 				5855F9841E11258A0032F04B /* Assets.xcassets */,
 				5855F9861E11258A0032F04B /* LaunchScreen.storyboard */,
@@ -137,6 +138,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DD227C2C1E164CE60028FBF8 /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,7 +177,7 @@
 				TargetAttributes = {
 					5855F9791E11258A0032F04B = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -209,7 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5855F9801E11258A0032F04B /* ViewController.swift in Sources */,
+				DD227C2B1E164A490028FBF8 /* LLLTabbarController.swift in Sources */,
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,11 +339,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gl.LLLVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -347,11 +357,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = gl.LLLVideoPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
