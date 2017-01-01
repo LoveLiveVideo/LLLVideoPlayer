@@ -30,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		584038D81E18CD3A003AA8B2 /* LLLVideoPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LLLVideoPlayer-Bridging-Header.h"; path = "LLLVideoPlayer/LLLVideoPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		5855F97A1E11258A0032F04B /* LLLVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLLVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5855F97D1E11258A0032F04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5855F9821E11258A0032F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		5855F9711E11258A0032F04B = {
 			isa = PBXGroup;
 			children = (
+				584038D81E18CD3A003AA8B2 /* LLLVideoPlayer-Bridging-Header.h */,
 				5855F97C1E11258A0032F04B /* LLLVideoPlayer */,
 				5865763A1E15258F00BB7B02 /* Libs */,
 				5855F97B1E11258A0032F04B /* Products */,
@@ -259,7 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BA30E8F305291450AAD8825E /* [CP] Embed Pods Frameworks */ = {
