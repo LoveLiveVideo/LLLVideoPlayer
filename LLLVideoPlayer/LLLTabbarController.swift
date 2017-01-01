@@ -11,4 +11,11 @@ import UIKit
 
 class LLLTabbarController: UITabBarController {
     
+    override func viewDidLoad() {
+        let xx: IJKFFMoviePlayerController = IJKFFMoviePlayerController.init()
+        let imageView: UIImageView = UIImageView.init()
+        imageView.sd_setImage(with: nil)
+        
+    }
+    
 }
