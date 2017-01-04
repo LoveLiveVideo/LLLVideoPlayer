@@ -26,9 +26,12 @@
 		586576531E1525E600BB7B02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576521E1525E600BB7B02 /* QuartzCore.framework */; };
 		586576551E1525EC00BB7B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576541E1525EC00BB7B02 /* UIKit.framework */; };
 		586576571E1525F100BB7B02 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576561E1525F100BB7B02 /* VideoToolbox.framework */; };
-		58AFC6351E1CF8E800D5950F /* LLLVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6341E1CF8E800D5950F /* LLLVideoPlayerController.swift */; };
-		58AFC6371E1CF8FF00D5950F /* LLLLiveVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6361E1CF8FF00D5950F /* LLLLiveVideoPlayerController.swift */; };
-		DD227C2B1E164A490028FBF8 /* LLLTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */; };
+		58AFC6351E1CF8E800D5950F /* LLLDemoVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6341E1CF8E800D5950F /* LLLDemoVideoPlayerController.swift */; };
+		58AFC6371E1CF8FF00D5950F /* LLLDemoLiveVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6361E1CF8FF00D5950F /* LLLDemoLiveVideoPlayerController.swift */; };
+		58AFC6391E1CF9BE00D5950F /* LLLDemoHorizontalVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6381E1CF9BE00D5950F /* LLLDemoHorizontalVideoPlayerController.swift */; };
+		58AFC63B1E1CF9DE00D5950F /* LLLDemoVerticalVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC63A1E1CF9DE00D5950F /* LLLDemoVerticalVideoPlayerController.swift */; };
+		58AFC6451E1D032700D5950F /* LLLDemoVideoPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6441E1D032700D5950F /* LLLDemoVideoPlayerCell.swift */; };
+		DD227C2B1E164A490028FBF8 /* LLLDemoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD227C2A1E164A490028FBF8 /* LLLDemoTabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +56,14 @@
 		586576521E1525E600BB7B02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		586576541E1525EC00BB7B02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586576561E1525F100BB7B02 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		58AFC6341E1CF8E800D5950F /* LLLDemoVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerController.swift; sourceTree = "<group>"; };
+		58AFC6361E1CF8FF00D5950F /* LLLDemoLiveVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoLiveVideoPlayerController.swift; sourceTree = "<group>"; };
+		58AFC6381E1CF9BE00D5950F /* LLLDemoHorizontalVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoHorizontalVideoPlayerController.swift; sourceTree = "<group>"; };
+		58AFC63A1E1CF9DE00D5950F /* LLLDemoVerticalVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVerticalVideoPlayerController.swift; sourceTree = "<group>"; };
+		58AFC6441E1D032700D5950F /* LLLDemoVideoPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerCell.swift; sourceTree = "<group>"; };
 		97C6357CC2A0E44D8022FBE1 /* Pods-LLLVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLLVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLTabbarController.swift; sourceTree = "<group>"; };
+		DD227C2A1E164A490028FBF8 /* LLLDemoTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoTabbarController.swift; sourceTree = "<group>"; };
 		ECF221F6010A2A57085A8FD9 /* Pods-LLLVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,9 +125,13 @@
 		5855F97C1E11258A0032F04B /* LLLVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				DD227C2C1E164CE60028FBF8 /* Live */,
 				5855F97D1E11258A0032F04B /* AppDelegate.swift */,
-				DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */,
+				DD227C2A1E164A490028FBF8 /* LLLDemoTabbarController.swift */,
+				58AFC6341E1CF8E800D5950F /* LLLDemoVideoPlayerController.swift */,
+				58AFC6361E1CF8FF00D5950F /* LLLDemoLiveVideoPlayerController.swift */,
+				58AFC6381E1CF9BE00D5950F /* LLLDemoHorizontalVideoPlayerController.swift */,
+				58AFC63A1E1CF9DE00D5950F /* LLLDemoVerticalVideoPlayerController.swift */,
+				58AFC6441E1D032700D5950F /* LLLDemoVideoPlayerCell.swift */,
 				5855F9811E11258A0032F04B /* Main.storyboard */,
 				5855F9841E11258A0032F04B /* Assets.xcassets */,
 				5855F9861E11258A0032F04B /* LaunchScreen.storyboard */,
@@ -156,13 +168,6 @@
 				BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DD227C2C1E164CE60028FBF8 /* Live */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Live;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,8 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD227C2B1E164A490028FBF8 /* LLLTabbarController.swift in Sources */,
+				58AFC6391E1CF9BE00D5950F /* LLLDemoHorizontalVideoPlayerController.swift in Sources */,
+				58AFC63B1E1CF9DE00D5950F /* LLLDemoVerticalVideoPlayerController.swift in Sources */,
+				DD227C2B1E164A490028FBF8 /* LLLDemoTabbarController.swift in Sources */,
+				58AFC6451E1D032700D5950F /* LLLDemoVideoPlayerCell.swift in Sources */,
+				58AFC6371E1CF8FF00D5950F /* LLLDemoLiveVideoPlayerController.swift in Sources */,
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
+				58AFC6351E1CF8E800D5950F /* LLLDemoVideoPlayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

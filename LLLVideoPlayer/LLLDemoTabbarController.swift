@@ -9,6 +9,6 @@
 import Foundation
 import UIKit
 
-class LLLTabbarController: UITabBarController {
+class LLLDemoTabbarController: UITabBarController {
 
 }
