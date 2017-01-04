@@ -26,6 +26,8 @@
 		586576531E1525E600BB7B02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576521E1525E600BB7B02 /* QuartzCore.framework */; };
 		586576551E1525EC00BB7B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576541E1525EC00BB7B02 /* UIKit.framework */; };
 		586576571E1525F100BB7B02 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576561E1525F100BB7B02 /* VideoToolbox.framework */; };
+		58AFC6351E1CF8E800D5950F /* LLLVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6341E1CF8E800D5950F /* LLLVideoPlayerController.swift */; };
+		58AFC6371E1CF8FF00D5950F /* LLLLiveVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58AFC6361E1CF8FF00D5950F /* LLLLiveVideoPlayerController.swift */; };
 		DD227C2B1E164A490028FBF8 /* LLLTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD227C2A1E164A490028FBF8 /* LLLTabbarController.swift */; };
 /* End PBXBuildFile section */
 
