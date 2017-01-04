@@ -23,9 +23,9 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: TodayTableViewCell? = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell") as? TodayTableViewCell
+        var cell: LLLDemoVideoPlayerCell? = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell") as? LLLDemoVideoPlayerCell
         if(cell == nil){
-            cell = TodayTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "TodayTableViewCell")
+            cell = LLLDemoVideoPlayerCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "TodayTableViewCell")
         }
         
         let dic1: NSDictionary? = extensionsArray?.object(at: indexPath.row) as? NSDictionary
