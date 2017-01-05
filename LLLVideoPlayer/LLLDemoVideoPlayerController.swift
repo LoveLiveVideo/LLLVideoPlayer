@@ -41,7 +41,7 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
             
             let storyboard: UIStoryboard = UIStoryboard.init(name: "MainInterface", bundle: Bundle.main)
             let shareSelect: UIViewController = storyboard.instantiateViewController(withIdentifier: "ShareSelect")
-            let shareSelectVC: ShareSelectViewController = shareSelect as! ShareSelectViewController
+            let shareSelectVC: LLLDemoHorizontalVideoPlayerController = shareSelect as! ShareSelectViewController
             let nav: UINavigationController = self.navigationController!
             nav.pushViewController(shareSelectVC, animated: true)
         }else if indexPath.row == 1 {
