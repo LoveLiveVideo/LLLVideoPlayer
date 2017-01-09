@@ -14,6 +14,7 @@
 		582D6EDD1E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6ED61E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift */; };
 		582D6EDE1E239B5600C07D13 /* LLLDemoVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6ED71E239B5600C07D13 /* LLLDemoVideoPlayerController.swift */; };
 		582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6ED91E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift */; };
+		582D6EE61E239E0700C07D13 /* HorizontalVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */; };
 		5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855F97D1E11258A0032F04B /* AppDelegate.swift */; };
 		5855F9831E11258A0032F04B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9811E11258A0032F04B /* Main.storyboard */; };
 		5855F9851E11258A0032F04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9841E11258A0032F04B /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		582D6ED61E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVerticalVideoPlayerController.swift; sourceTree = "<group>"; };
 		582D6ED71E239B5600C07D13 /* LLLDemoVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerController.swift; sourceTree = "<group>"; };
 		582D6ED91E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerCell.swift; sourceTree = "<group>"; };
+		582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalVideoPlayer.swift; sourceTree = "<group>"; };
 		584038D81E18CD3A003AA8B2 /* LLLVideoPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LLLVideoPlayer-Bridging-Header.h"; path = "LLLVideoPlayer/LLLVideoPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		5855F97A1E11258A0032F04B /* LLLVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLLVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5855F97D1E11258A0032F04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 		582D6EE11E239B5B00C07D13 /* HorizontalVideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */,
 			);
 			path = HorizontalVideoPlayer;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
 				582D6EDA1E239B5600C07D13 /* LLLDemoTabbarController.swift in Sources */,
 				582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */,
+				582D6EE61E239E0700C07D13 /* HorizontalVideoPlayer.swift in Sources */,
 				582D6EDD1E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift in Sources */,
 				582D6EDC1E239B5600C07D13 /* LLLDemoHorizontalVideoPlayerController.swift in Sources */,
 				582D6EDB1E239B5600C07D13 /* LLLDemoLiveVideoPlayerController.swift in Sources */,

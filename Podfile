@@ -4,8 +4,8 @@ use_frameworks!
 
 target 'LLLVideoPlayer' do
     pod 'Alamofire'
-    pod 'Masonry'
-    pod 'SDWebImage'
+    pod 'SnapKit'
+    pod 'Kingfisher'
     pod 'SVProgressHUD'
     pod 'GPUImage'
 end

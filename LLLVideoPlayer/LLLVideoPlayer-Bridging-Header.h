@@ -13,4 +13,6 @@
 
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
+#import <Masonry/Masonry.h>
+
 #endif /* LLLVideoPlayer_Bridging_Header_h */
