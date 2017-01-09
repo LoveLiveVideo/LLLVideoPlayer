@@ -36,7 +36,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hfj-L1-aDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="382"/>
+            <point key="canvasLocation" x="857" y="382"/>
         </scene>
         <!--直播-->
         <scene sceneID="06w-BS-Alr">
@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="119" y="382"/>
         </scene>
-        <!--Tabbar Controller-->
+        <!--Demo Tabbar Controller-->
         <scene sceneID="tPe-sf-T1E">
             <objects>
-                <tabBarController id="bot-u6-L5Q" customClass="LLLTabbarController" customModule="LLLVideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="bot-u6-L5Q" customClass="LLLDemoTabbarController" customModule="LLLVideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="sBL-FK-mEC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,7 +71,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QzF-gw-nHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="-101"/>
+            <point key="canvasLocation" x="-898" y="0.0"/>
         </scene>
         <!--点播-->
         <scene sceneID="VIW-nT-JGi">
@@ -83,41 +83,47 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="l2u-gc-mEP" kind="relationship" relationship="rootViewController" id="fdF-wN-aDr"/>
+                        <segue destination="7ps-G2-JbI" kind="relationship" relationship="rootViewController" id="sjB-4V-jh7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8F-bq-reu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="119" y="-390"/>
         </scene>
-        <!--播放器类型-->
-        <scene sceneID="5IC-C6-7Oz">
+        <!--Demo Video Player Controller-->
+        <scene sceneID="CNk-wd-wVZ">
             <objects>
-                <tableViewController title="播放器类型" id="l2u-gc-mEP" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vox-3m-KpN">
+                <viewController id="7ps-G2-JbI" customClass="LLLDemoVideoPlayerController" customModule="LLLVideoPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AiP-b9-Dcb"/>
+                        <viewControllerLayoutGuide type="bottom" id="dLd-du-0rb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dhW-7q-ESs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="wHe-MJ-Da8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7ps-G2-JbI" id="AHn-Th-5SW"/>
+                                    <outlet property="delegate" destination="7ps-G2-JbI" id="lRo-D2-K5M"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Type" id="xYJ-u6-l6V">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xYJ-u6-l6V" id="9AW-hy-NL3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="l2u-gc-mEP" id="htb-gn-mwT"/>
-                            <outlet property="delegate" destination="l2u-gc-mEP" id="1AH-nd-BmH"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="播放器类型" id="vk0-6i-hPa"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJs-7a-k5D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="wHe-MJ-Da8" firstAttribute="bottom" secondItem="dLd-du-0rb" secondAttribute="top" id="0ak-JS-Eik"/>
+                            <constraint firstItem="wHe-MJ-Da8" firstAttribute="leading" secondItem="dhW-7q-ESs" secondAttribute="leading" id="301-Vs-i84"/>
+                            <constraint firstItem="wHe-MJ-Da8" firstAttribute="top" secondItem="dhW-7q-ESs" secondAttribute="top" id="glp-bO-Eju"/>
+                            <constraint firstAttribute="trailing" secondItem="wHe-MJ-Da8" secondAttribute="trailing" id="soL-9g-bxa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6sX-rS-QYG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIM-Gx-2Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="-391"/>
+            <point key="canvasLocation" x="856.79999999999995" y="-391.75412293853077"/>
         </scene>
     </scenes>
 </document>

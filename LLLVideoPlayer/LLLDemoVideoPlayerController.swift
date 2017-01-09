@@ -13,8 +13,8 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
     //sohu的m3u8地址都加密了，防盗链，所以给ijk播放之前还的解密后能用的ts给
     override func viewDidLoad() {
         let xx: IJKFFMoviePlayerController = IJKFFMoviePlayerController.init()
-        let imageView: UIImageView = UIImageView.init()
-        imageView.sd_setImage(with: nil)
+        
+        self.title = "点播"
         
     }
     
@@ -23,28 +23,29 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: LLLDemoVideoPlayerCell? = tableView.dequeueReusableCell(withIdentifier: "TodayTableViewCell") as? LLLDemoVideoPlayerCell
+        var cell: UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: "LLLDemoVideoPlayerCell")
         if(cell == nil){
-            cell = LLLDemoVideoPlayerCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "TodayTableViewCell")
+            cell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: "LLLDemoVideoPlayerCell")
         }
-        
-        let dic1: NSDictionary? = extensionsArray?.object(at: indexPath.row) as? NSDictionary
-        let data: NSData? = dic1?.object(forKey: "data") as? NSData
-        cell?.imagePhoto?.image = UIImage.init(data: data as! Data)
-        cell?.imagePhotoTitle?.text = dic1?.object(forKey: "title") as? String
+        if indexPath.row == 0 {
+            cell?.textLabel?.text = "横屏播放器"
+            cell?.detailTextLabel?.text = "最常见播放器类型，适用于大多app"
+        }else if indexPath.row == 1 {
+            cell?.textLabel?.text = "竖屏播放器"
+            cell?.detailTextLabel?.text = "适用于手机拍摄播放"
+        }
         
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            let horizontalVideoPlayerController : LLLDemoHorizontalVideoPlayerController = LLLDemoHorizontalVideoPlayerController.init()
+            self.navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
             
-            let storyboard: UIStoryboard = UIStoryboard.init(name: "MainInterface", bundle: Bundle.main)
-            let shareSelect: UIViewController = storyboard.instantiateViewController(withIdentifier: "ShareSelect")
-            let shareSelectVC: LLLDemoHorizontalVideoPlayerController = shareSelect as! ShareSelectViewController
-            let nav: UINavigationController = self.navigationController!
-            nav.pushViewController(shareSelectVC, animated: true)
         }else if indexPath.row == 1 {
+            let horizontalVideoPlayerController : LLLDemoVerticalVideoPlayerController = LLLDemoVerticalVideoPlayerController.init()
+            self.navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
             
         }else {
             
