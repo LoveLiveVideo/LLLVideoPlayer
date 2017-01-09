@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SnapKit
 
 class HorizontalVideoPlayer: UIView {
     
@@ -15,10 +16,16 @@ class HorizontalVideoPlayer: UIView {
         
         let options: IJKFFOptions = IJKFFOptions.byDefault()
         let ffPlayer: IJKFFMoviePlayerController = IJKFFMoviePlayerController.init(contentURL: aUrl, with: options)
+        ffPlayer.scalingMode = IJKMPMovieScalingMode.aspectFit
         
-//        self.addSubview(ffPlayer.view)
+        self.addSubview(ffPlayer.view)
+        ffPlayer.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
         
-        self.backgroundColor = UIColor.blue
+        ffPlayer.prepareToPlay()
+        ffPlayer.play()
+
     }
     
     required init?(coder aDecoder: NSCoder) {

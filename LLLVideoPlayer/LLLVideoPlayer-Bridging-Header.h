@@ -9,10 +9,7 @@
 #ifndef LLLVideoPlayer_Bridging_Header_h
 #define LLLVideoPlayer_Bridging_Header_h
 
-#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <IJKMediaFramework/IJKMediaFramework.h>
-
-#import <Masonry/Masonry.h>
 
 #endif /* LLLVideoPlayer_Bridging_Header_h */

@@ -43,6 +43,7 @@
 		582D6ED71E239B5600C07D13 /* LLLDemoVideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerController.swift; sourceTree = "<group>"; };
 		582D6ED91E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLLDemoVideoPlayerCell.swift; sourceTree = "<group>"; };
 		582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalVideoPlayer.swift; sourceTree = "<group>"; };
+		582D6EEF1E23A87800C07D13 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		584038D81E18CD3A003AA8B2 /* LLLVideoPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LLLVideoPlayer-Bridging-Header.h"; path = "LLLVideoPlayer/LLLVideoPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
 		5855F97A1E11258A0032F04B /* LLLVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLLVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5855F97D1E11258A0032F04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +220,7 @@
 				5855F9841E11258A0032F04B /* Assets.xcassets */,
 				5855F9861E11258A0032F04B /* LaunchScreen.storyboard */,
 				5855F9891E11258A0032F04B /* Info.plist */,
+				582D6EEF1E23A87800C07D13 /* PrefixHeader.pch */,
 			);
 			path = LLLVideoPlayer;
 			sourceTree = "<group>";
@@ -510,6 +512,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -530,6 +533,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SnapKit
 
 class LLLDemoHorizontalVideoPlayerController: UIViewController {
     
@@ -26,12 +27,13 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController {
         
         self.view.addSubview(player)
         
-        player.mas_makeConstraints { (make) in
-            make?.top.equalTo()
-            make?.edges.equalTo(player)
-            make?.top.left().right().equalTo(self.view)
-            make?.height.mas_equalTo(200)
+        
+        player.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(self.view)
+            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0)
         }
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
