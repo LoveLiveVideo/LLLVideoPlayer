@@ -34,8 +34,7 @@ class VideoPlayerControl: UIControl {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        self.backgroundColor = UIColor.black
+
         
         backButton = UIButton.init(type: UIButtonType.custom)
         backButton?.setTitle("返回", for: UIControlState.normal)

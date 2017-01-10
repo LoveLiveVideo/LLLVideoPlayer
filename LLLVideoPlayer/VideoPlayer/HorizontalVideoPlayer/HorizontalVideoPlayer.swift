@@ -23,6 +23,14 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     init!(contentURL aUrl: URL!){
         super.init(frame: CGRect.zero)
         
+        let backgroundView: UIView = UIView.init()
+        backgroundView.backgroundColor = UIColor.black
+        self.addSubview(backgroundView)
+        
+        backgroundView.snp.makeConstraints({ (make) in
+            make.edges.equalTo(self)
+        })
+        
         let options: IJKFFOptions = IJKFFOptions.byDefault()
         let ffPlayer: IJKFFMoviePlayerController = IJKFFMoviePlayerController.init(contentURL: aUrl, with: options)
         ffPlayer.scalingMode = IJKMPMovieScalingMode.aspectFit

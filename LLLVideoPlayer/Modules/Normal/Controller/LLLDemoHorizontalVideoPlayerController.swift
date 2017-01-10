@@ -37,10 +37,12 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
     }
     
     func goBack() {
