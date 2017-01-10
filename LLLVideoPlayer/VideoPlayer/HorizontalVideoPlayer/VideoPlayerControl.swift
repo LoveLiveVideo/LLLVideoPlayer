@@ -13,6 +13,8 @@ public protocol VideoPlayerControlProtocol : NSObjectProtocol {
     
     func goBack()
     
+    func currentPlaybackTime(position: TimeInterval!)
+
 }
 
 class VideoPlayerControl: UIControl {
@@ -31,6 +33,7 @@ class VideoPlayerControl: UIControl {
 
     var progressSlider: UISlider?
     
+    var progressSliderDragging: Bool = false
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,7 +42,7 @@ class VideoPlayerControl: UIControl {
         backButton = UIButton.init(type: UIButtonType.custom)
         backButton?.setTitle("返回", for: UIControlState.normal)
         backButton?.setTitleColor(UIColor.white, for: UIControlState.normal)
-        backButton?.addTarget(self, action: #selector(VideoPlayerControl.backButtonTap(sender:)), for: UIControlEvents.touchUpInside)
+        backButton?.addTarget(self, action: #selector(backButtonTap(sender:)), for: UIControlEvents.touchUpInside)
         self.addSubview(backButton!)
 
         backButton?.snp.makeConstraints({ (make) in
@@ -90,6 +93,7 @@ class VideoPlayerControl: UIControl {
         totalDurationLabel?.textColor = UIColor.white
         totalDurationLabel?.font = UIFont.systemFont(ofSize: 13)
         totalDurationLabel?.textAlignment = NSTextAlignment.left
+        totalDurationLabel?.text = "/00:00"
         self.addSubview(totalDurationLabel!)
         
         totalDurationLabel?.snp.makeConstraints({ (make) in
@@ -103,6 +107,7 @@ class VideoPlayerControl: UIControl {
         currentTimeLabel?.textColor = UIColor.white
         currentTimeLabel?.font = UIFont.systemFont(ofSize: 13)
         currentTimeLabel?.textAlignment = NSTextAlignment.right
+        currentTimeLabel?.text = "00:00"
         self.addSubview(currentTimeLabel!)
         
         currentTimeLabel?.snp.makeConstraints({ (make) in
@@ -113,9 +118,14 @@ class VideoPlayerControl: UIControl {
         })
         
         progressSlider = UISlider.init()
-        progressSlider?.addTarget(self, action: #selector(VideoPlayerControl.backButtonTap(sender:)), for: UIControlEvents.touchUpInside)
+        progressSlider?.maximumValue = 0.0
+        progressSlider?.minimumValue = 0.0
         self.addSubview(progressSlider!)
-        
+        progressSlider?.addTarget(self, action: #selector(progressSliderTouchDown(sender:)), for: UIControlEvents.touchDown)
+        progressSlider?.addTarget(self, action: #selector(progressSliderTouchUpOutside(sender:)), for: UIControlEvents.touchUpOutside)
+        progressSlider?.addTarget(self, action: #selector(progressSliderTouchUpInside(sender:)), for: UIControlEvents.touchUpInside)
+        progressSlider?.addTarget(self, action: #selector(progressSliderTouchCancel(sender:)), for: UIControlEvents.touchCancel)
+
         progressSlider?.snp.makeConstraints({ (make) in
             make.left.equalTo((playButton?.snp.right)!).offset(10)
             make.right.equalTo((currentTimeLabel?.snp.left)!).offset(-10)
@@ -123,7 +133,8 @@ class VideoPlayerControl: UIControl {
             make.height.equalTo(30)
         })
         
-        Timer.scheduledTimer(timeInterval: 1,
+        self.refreshPlayerControl()
+        Timer.scheduledTimer(timeInterval: 0.5,
                              target: self,
                              selector: #selector(refreshPlayerControl),
                              userInfo: nil,
@@ -136,11 +147,28 @@ class VideoPlayerControl: UIControl {
     
     func setVideoPlayerControlDelegate(object: VideoPlayerControlProtocol) -> Void {
         videoPlayerControlDelegate = object
-        
     }
 
     func backButtonTap(sender: UIButton) -> Void {
         videoPlayerControlDelegate?.goBack()
+    }
+    
+    func progressSliderTouchDown(sender: UISlider) -> Void {
+        progressSliderDragging = true
+    }
+    
+    func progressSliderTouchCancel(sender: UISlider) -> Void {
+        progressSliderDragging = false
+    }
+    
+    func progressSliderTouchUpOutside(sender: UISlider) -> Void {
+        progressSliderDragging = false
+    }
+    
+    func progressSliderTouchUpInside(sender: UISlider) -> Void {
+        progressSliderDragging = false
+        let position: TimeInterval = TimeInterval.init((progressSlider?.value)!)
+        videoPlayerControlDelegate?.currentPlaybackTime(position: position)
     }
     
     func refreshPlayerControl() -> Void {
@@ -161,7 +189,12 @@ class VideoPlayerControl: UIControl {
             }
         }
         
-        let position: TimeInterval? = mediaPlayback?.currentPlaybackTime
+        let position: TimeInterval?
+        if progressSliderDragging {
+            position = TimeInterval.init((progressSlider?.value)!)
+        }else {
+            position = mediaPlayback?.currentPlaybackTime
+        }
         if position != nil {
             let positionR: TimeInterval! = position
             if positionR > 0.0 {
@@ -177,8 +210,8 @@ class VideoPlayerControl: UIControl {
                 progressSlider?.value = Float(0.0)
             }
         }
-
     }
+    
 }
 
 

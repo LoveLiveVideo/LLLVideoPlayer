@@ -14,7 +14,7 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         let xx: IJKFFMoviePlayerController = IJKFFMoviePlayerController.init()
         
-        self.title = "点播"
+        title = "点播"
         
     }
     
@@ -39,13 +39,15 @@ class LLLDemoVideoPlayerController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.row == 0 {
             let horizontalVideoPlayerController : LLLDemoHorizontalVideoPlayerController = LLLDemoHorizontalVideoPlayerController.init()
-            self.navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
+            navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
             
         }else if indexPath.row == 1 {
             let horizontalVideoPlayerController : LLLDemoVerticalVideoPlayerController = LLLDemoVerticalVideoPlayerController.init()
-            self.navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
+            navigationController?.pushViewController(horizontalVideoPlayerController, animated: true)
             
         }else {
             

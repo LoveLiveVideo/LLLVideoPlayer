@@ -13,7 +13,7 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.hidesBottomBarWhenPushed = true
+        hidesBottomBarWhenPushed = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,10 +25,10 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
         let url: URL = URL.init(string: "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8")!
         let player: HorizontalVideoPlayer = HorizontalVideoPlayer.init(contentURL: url)
         player.horizontalVideoPlayerDelegate = self
-        self.view.addSubview(player)
+        view.addSubview(player)
         
         player.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(self.view)
+            make.top.left.right.equalTo(view)
             make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0)
         }
         
@@ -36,16 +36,21 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
     }
     
+//    override func viewDidDisappear(_ animated: Bool) {
+//        navigationController?.setNavigationBarHidden(false, animated: false)
+//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
+//    }
+    
     func goBack() {
-        self.navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 }
