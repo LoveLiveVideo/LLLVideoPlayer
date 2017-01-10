@@ -9,7 +9,7 @@
 import Foundation
 import SnapKit
 
-class LLLDemoHorizontalVideoPlayerController: UIViewController {
+class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoPlayerProtocol {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -24,9 +24,8 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController {
         
         let url: URL = URL.init(string: "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8")!
         let player: HorizontalVideoPlayer = HorizontalVideoPlayer.init(contentURL: url)
-        
+        player.horizontalVideoPlayerDelegate = self
         self.view.addSubview(player)
-        
         
         player.snp.makeConstraints { (make) in
             make.top.left.right.equalTo(self.view)
@@ -42,5 +41,9 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    func goBack() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

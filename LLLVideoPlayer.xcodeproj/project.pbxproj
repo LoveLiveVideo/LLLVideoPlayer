@@ -33,6 +33,7 @@
 		586576531E1525E600BB7B02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576521E1525E600BB7B02 /* QuartzCore.framework */; };
 		586576551E1525EC00BB7B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576541E1525EC00BB7B02 /* UIKit.framework */; };
 		586576571E1525F100BB7B02 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576561E1525F100BB7B02 /* VideoToolbox.framework */; };
+		58C689681E249ECE0040293B /* VideoPlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C689671E249ECE0040293B /* VideoPlayerControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		586576521E1525E600BB7B02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		586576541E1525EC00BB7B02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586576561E1525F100BB7B02 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		58C689671E249ECE0040293B /* VideoPlayerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerControl.swift; path = HorizontalVideoPlayer/VideoPlayerControl.swift; sourceTree = "<group>"; };
 		97C6357CC2A0E44D8022FBE1 /* Pods-LLLVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLLVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF221F6010A2A57085A8FD9 /* Pods-LLLVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		582D6EE01E239B5B00C07D13 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				58C689671E249ECE0040293B /* VideoPlayerControl.swift */,
 				582D6EE11E239B5B00C07D13 /* HorizontalVideoPlayer */,
 				582D6EE31E239B5B00C07D13 /* VerticalVideoPlayer */,
 				582D6EE21E239B5B00C07D13 /* LiveVideoPlayer */,
@@ -382,6 +385,7 @@
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
 				582D6EDA1E239B5600C07D13 /* LLLDemoTabbarController.swift in Sources */,
 				582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */,
+				58C689681E249ECE0040293B /* VideoPlayerControl.swift in Sources */,
 				582D6EE61E239E0700C07D13 /* HorizontalVideoPlayer.swift in Sources */,
 				582D6EDD1E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift in Sources */,
 				582D6EDC1E239B5600C07D13 /* LLLDemoHorizontalVideoPlayerController.swift in Sources */,
