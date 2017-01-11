@@ -64,6 +64,8 @@ class VideoPlayerControl: UIControl {
         })
         
         playButton = UIButton.init(type: UIButtonType.custom)
+        playButton?.setImage(UIImage.init(named: "PlayerInline-Btn-Play-Normal"), for: UIControlState.normal)("播放", for: UIControlState.normal)
+
         playButton?.setTitle("播放", for: UIControlState.normal)
         playButton?.setTitleColor(UIColor.white, for: UIControlState.normal)
         playButton?.addTarget(self, action: #selector(VideoPlayerControl.backButtonTap(sender:)), for: UIControlEvents.touchUpInside)
