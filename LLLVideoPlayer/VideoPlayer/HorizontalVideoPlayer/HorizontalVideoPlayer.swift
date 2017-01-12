@@ -24,11 +24,11 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     init!(contentURL aUrl: URL!){
         super.init(frame: CGRect.zero)
         
-        self.installNotificationObservers()
+        installNotificationObservers()
         
         let backgroundView: UIView = UIView.init()
         backgroundView.backgroundColor = UIColor.black
-        self.addSubview(backgroundView)
+        addSubview(backgroundView)
         
         backgroundView.snp.makeConstraints({ (make) in
             make.edges.equalTo(self)
@@ -37,7 +37,7 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
         let options: IJKFFOptions = IJKFFOptions.byDefault()
         ffPlayer = IJKFFMoviePlayerController.init(contentURL: aUrl, with: options)
         ffPlayer?.scalingMode = IJKMPMovieScalingMode.aspectFit
-        self.addSubview((ffPlayer?.view)!)
+        addSubview((ffPlayer?.view)!)
         
         ffPlayer?.view.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
@@ -47,16 +47,14 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
         videoPlayerControl = VideoPlayerControl.init(frame: CGRect.zero)
         videoPlayerControl?.videoPlayerControlDelegate = self
         videoPlayerControl?.mediaPlayback = ffPlayer
-        self.addSubview(videoPlayerControl!)
+        addSubview(videoPlayerControl!)
         
         videoPlayerControl?.snp.makeConstraints { (make) in
             make.edges.equalTo(self)
         }
         
-        
         ffPlayer?.prepareToPlay()
         ffPlayer?.play()
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,11 +63,6 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     
     func currentPlaybackTime(position: TimeInterval!) {
         ffPlayer?.currentPlaybackTime = position
-    }
-    
-    func goBack() {
-        ffPlayer?.shutdown()
-        horizontalVideoPlayerDelegate?.goBack()
     }
     
     func installNotificationObservers() {
@@ -81,8 +74,46 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     
     func loadStateDidChange(notification: Notification) {
         videoPlayerControl?.videoNameLabel?.text = "更新了哈哈哈"
+        videoPlayerControl?.setPlayButton(playbackState: ffPlayer!.playbackState)
+
+        switch ffPlayer!.playbackState {
+        case IJKMPMoviePlaybackState.playing:
+            
+            break
+        case IJKMPMoviePlaybackState.stopped:
+            
+            break
+        case IJKMPMoviePlaybackState.paused:
+            
+            break
+        case IJKMPMoviePlaybackState.interrupted:
+            
+            break
+        case IJKMPMoviePlaybackState.seekingForward:
+            
+            break
+        case IJKMPMoviePlaybackState.seekingBackward:
+            
+            break
+        default:
+            break
+        }
+        
     }
     
+    
+    func goBack() {
+        ffPlayer?.shutdown()
+        horizontalVideoPlayerDelegate?.goBack()
+    }
+    
+    func play() {
+        ffPlayer?.play()
+    }
+    
+    func pause() {
+        ffPlayer?.pause()
+    }
 }
 
 

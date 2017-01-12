@@ -36,7 +36,6 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
             make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0)
         }
         
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,11 +47,6 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
         navigationController?.setNavigationBarHidden(false, animated: false)
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
     }
-    
-//    override func viewDidDisappear(_ animated: Bool) {
-//        navigationController?.setNavigationBarHidden(false, animated: false)
-//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
-//    }
     
     func goBack() {
         _ = navigationController?.popViewController(animated: true)

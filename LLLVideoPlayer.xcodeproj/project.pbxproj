@@ -33,7 +33,12 @@
 		586576531E1525E600BB7B02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576521E1525E600BB7B02 /* QuartzCore.framework */; };
 		586576551E1525EC00BB7B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576541E1525EC00BB7B02 /* UIKit.framework */; };
 		586576571E1525F100BB7B02 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586576561E1525F100BB7B02 /* VideoToolbox.framework */; };
-		58C689681E249ECE0040293B /* VideoPlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C689671E249ECE0040293B /* VideoPlayerControl.swift */; };
+		58813EC11E277D9C00F529AA /* VideoPlayerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58813EBD1E277D9C00F529AA /* VideoPlayerControl.swift */; };
+		58813EC21E277D9C00F529AA /* SVPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813EC01E277D9C00F529AA /* SVPlayerSlider.m */; };
+		58813EC61E27919300F529AA /* SHProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813EC51E27919300F529AA /* SHProgressView.m */; };
+		58813ECD1E27981200F529AA /* UIColor+.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECA1E27981200F529AA /* UIColor+.m */; };
+		58813ECE1E27981200F529AA /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECC1E27981200F529AA /* UIImageExtend.m */; };
+		58813ED01E279F4F00F529AA /* VideoPlayerControl+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECF1E279F4F00F529AA /* VideoPlayerControl+Gestures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +71,16 @@
 		586576521E1525E600BB7B02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		586576541E1525EC00BB7B02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586576561E1525F100BB7B02 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
-		58C689671E249ECE0040293B /* VideoPlayerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoPlayerControl.swift; path = HorizontalVideoPlayer/VideoPlayerControl.swift; sourceTree = "<group>"; };
+		58813EBD1E277D9C00F529AA /* VideoPlayerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerControl.swift; sourceTree = "<group>"; };
+		58813EBF1E277D9C00F529AA /* SVPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPlayerSlider.h; sourceTree = "<group>"; };
+		58813EC01E277D9C00F529AA /* SVPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPlayerSlider.m; sourceTree = "<group>"; };
+		58813EC41E27919300F529AA /* SHProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHProgressView.h; sourceTree = "<group>"; };
+		58813EC51E27919300F529AA /* SHProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHProgressView.m; sourceTree = "<group>"; };
+		58813EC91E27981200F529AA /* UIColor+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+.h"; sourceTree = "<group>"; };
+		58813ECA1E27981200F529AA /* UIColor+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+.m"; sourceTree = "<group>"; };
+		58813ECB1E27981200F529AA /* UIImageExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtend.h; sourceTree = "<group>"; };
+		58813ECC1E27981200F529AA /* UIImageExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtend.m; sourceTree = "<group>"; };
+		58813ECF1E279F4F00F529AA /* VideoPlayerControl+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VideoPlayerControl+Gestures.swift"; sourceTree = "<group>"; };
 		97C6357CC2A0E44D8022FBE1 /* Pods-LLLVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLLVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF221F6010A2A57085A8FD9 /* Pods-LLLVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +177,7 @@
 		582D6EE01E239B5B00C07D13 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				58C689671E249ECE0040293B /* VideoPlayerControl.swift */,
+				58813EBC1E277D9C00F529AA /* VideoPlayerControl */,
 				582D6EE11E239B5B00C07D13 /* HorizontalVideoPlayer */,
 				582D6EE31E239B5B00C07D13 /* VerticalVideoPlayer */,
 				582D6EE21E239B5B00C07D13 /* LiveVideoPlayer */,
@@ -219,6 +233,7 @@
 				5855F97D1E11258A0032F04B /* AppDelegate.swift */,
 				582D6ECE1E239B5600C07D13 /* Modules */,
 				582D6EE01E239B5B00C07D13 /* VideoPlayer */,
+				58813EC71E27981200F529AA /* Utility */,
 				5855F9811E11258A0032F04B /* Main.storyboard */,
 				5855F9841E11258A0032F04B /* Assets.xcassets */,
 				5855F9861E11258A0032F04B /* LaunchScreen.storyboard */,
@@ -256,6 +271,46 @@
 				BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58813EBC1E277D9C00F529AA /* VideoPlayerControl */ = {
+			isa = PBXGroup;
+			children = (
+				58813EBD1E277D9C00F529AA /* VideoPlayerControl.swift */,
+				58813ECF1E279F4F00F529AA /* VideoPlayerControl+Gestures.swift */,
+				58813EBE1E277D9C00F529AA /* Views */,
+			);
+			path = VideoPlayerControl;
+			sourceTree = "<group>";
+		};
+		58813EBE1E277D9C00F529AA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58813EC41E27919300F529AA /* SHProgressView.h */,
+				58813EC51E27919300F529AA /* SHProgressView.m */,
+				58813EBF1E277D9C00F529AA /* SVPlayerSlider.h */,
+				58813EC01E277D9C00F529AA /* SVPlayerSlider.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		58813EC71E27981200F529AA /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				58813EC81E27981200F529AA /* Category */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		58813EC81E27981200F529AA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				58813EC91E27981200F529AA /* UIColor+.h */,
+				58813ECA1E27981200F529AA /* UIColor+.m */,
+				58813ECB1E27981200F529AA /* UIImageExtend.h */,
+				58813ECC1E27981200F529AA /* UIImageExtend.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,14 +437,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				582D6EDE1E239B5600C07D13 /* LLLDemoVideoPlayerController.swift in Sources */,
+				58813ECD1E27981200F529AA /* UIColor+.m in Sources */,
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
 				582D6EDA1E239B5600C07D13 /* LLLDemoTabbarController.swift in Sources */,
 				582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */,
-				58C689681E249ECE0040293B /* VideoPlayerControl.swift in Sources */,
+				58813EC21E277D9C00F529AA /* SVPlayerSlider.m in Sources */,
+				58813EC11E277D9C00F529AA /* VideoPlayerControl.swift in Sources */,
 				582D6EE61E239E0700C07D13 /* HorizontalVideoPlayer.swift in Sources */,
 				582D6EDD1E239B5600C07D13 /* LLLDemoVerticalVideoPlayerController.swift in Sources */,
 				582D6EDC1E239B5600C07D13 /* LLLDemoHorizontalVideoPlayerController.swift in Sources */,
+				58813EC61E27919300F529AA /* SHProgressView.m in Sources */,
 				582D6EDB1E239B5600C07D13 /* LLLDemoLiveVideoPlayerController.swift in Sources */,
+				58813ED01E279F4F00F529AA /* VideoPlayerControl+Gestures.swift in Sources */,
+				58813ECE1E27981200F529AA /* UIImageExtend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +576,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
-				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				GCC_PREFIX_HEADER = LLLVideoPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -537,7 +597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LLLVideoPlayer/Libs",
 				);
-				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				GCC_PREFIX_HEADER = LLLVideoPlayer/PrefixHeader.pch;
 				INFOPLIST_FILE = LLLVideoPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

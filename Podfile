@@ -8,4 +8,5 @@ target 'LLLVideoPlayer' do
     pod 'Kingfisher'
     pod 'SVProgressHUD'
     pod 'GPUImage'
+    pod 'Masonry'
 end

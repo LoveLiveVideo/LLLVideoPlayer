@@ -9,7 +9,12 @@
 #ifndef LLLVideoPlayer_Bridging_Header_h
 #define LLLVideoPlayer_Bridging_Header_h
 
-
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
-#endif /* LLLVideoPlayer_Bridging_Header_h */
+#import "SVPlayerSlider.h"
+#import "SHProgressView.h"
+
+#import "UIColor+.h"
+#import "UIImageExtend.h"
+
+#endif
