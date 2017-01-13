@@ -67,14 +67,14 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     
     func installNotificationObservers() {
         NotificationCenter.default.addObserver(self,
-        selector: #selector(loadStateDidChange(notification:)),
-        name:NSNotification.Name.IJKMPMoviePlayerLoadStateDidChange,
+        selector: #selector(playStateDidChange(notification:)),
+        name:NSNotification.Name.IJKMPMoviePlayerPlaybackStateDidChange,
         object: ffPlayer)
     }
     
-    func loadStateDidChange(notification: Notification) {
+    func playStateDidChange(notification: Notification) {
         videoPlayerControl?.videoNameLabel?.text = "更新了哈哈哈"
-        videoPlayerControl?.setPlayButton(playbackState: ffPlayer!.playbackState)
+        videoPlayerControl?.playState = ffPlayer!.playbackState
 
         switch ffPlayer!.playbackState {
         case IJKMPMoviePlaybackState.playing:

@@ -13,8 +13,10 @@
 
 #import "SVPlayerSlider.h"
 #import "SHProgressView.h"
+#import "PlayerSeekView.h"
 
 #import "UIColor+.h"
 #import "UIImageExtend.h"
+
 
 #endif

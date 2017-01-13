@@ -39,6 +39,7 @@
 		58813ECD1E27981200F529AA /* UIColor+.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECA1E27981200F529AA /* UIColor+.m */; };
 		58813ECE1E27981200F529AA /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECC1E27981200F529AA /* UIImageExtend.m */; };
 		58813ED01E279F4F00F529AA /* VideoPlayerControl+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58813ECF1E279F4F00F529AA /* VideoPlayerControl+Gestures.swift */; };
+		58813ED41E28DF7800F529AA /* PlayerSeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58813ED31E28DF7800F529AA /* PlayerSeekView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,8 @@
 		58813ECB1E27981200F529AA /* UIImageExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtend.h; sourceTree = "<group>"; };
 		58813ECC1E27981200F529AA /* UIImageExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtend.m; sourceTree = "<group>"; };
 		58813ECF1E279F4F00F529AA /* VideoPlayerControl+Gestures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VideoPlayerControl+Gestures.swift"; sourceTree = "<group>"; };
+		58813ED21E28DF7800F529AA /* PlayerSeekView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerSeekView.h; sourceTree = "<group>"; };
+		58813ED31E28DF7800F529AA /* PlayerSeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerSeekView.m; sourceTree = "<group>"; };
 		97C6357CC2A0E44D8022FBE1 /* Pods-LLLVideoPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 		BB383160C959C5E708B0F584 /* Pods_LLLVideoPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LLLVideoPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF221F6010A2A57085A8FD9 /* Pods-LLLVideoPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LLLVideoPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-LLLVideoPlayer/Pods-LLLVideoPlayer.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 		58813EBE1E277D9C00F529AA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				58813ED21E28DF7800F529AA /* PlayerSeekView.h */,
+				58813ED31E28DF7800F529AA /* PlayerSeekView.m */,
 				58813EC41E27919300F529AA /* SHProgressView.h */,
 				58813EC51E27919300F529AA /* SHProgressView.m */,
 				58813EBF1E277D9C00F529AA /* SVPlayerSlider.h */,
@@ -436,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58813ED41E28DF7800F529AA /* PlayerSeekView.m in Sources */,
 				582D6EDE1E239B5600C07D13 /* LLLDemoVideoPlayerController.swift in Sources */,
 				58813ECD1E27981200F529AA /* UIColor+.m in Sources */,
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,

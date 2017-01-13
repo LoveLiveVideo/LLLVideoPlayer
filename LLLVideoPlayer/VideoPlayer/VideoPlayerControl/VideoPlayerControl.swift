@@ -30,7 +30,8 @@ class VideoPlayerControl: UIControl {
     let totalDurationLabelR: Float = 7
     let totalDurationLabelH: Float = 12
     let totalDurationLabelW: Float = 40
-    let progressSliderLeft: Float = 8
+    let progressSliderLeft: Float = 6
+    let progressSliderRight: Float = 8
 
 
     var mediaPlayback: IJKMediaPlayback?
@@ -51,9 +52,45 @@ class VideoPlayerControl: UIControl {
 
     var progressSliderDragging: Bool = false
     
+    var voerlayAlpha: CGFloat = 1.0
+    var overlayHiddenTimer: Timer?
+    var overlayHiddenTimerCount: Int = 0
+    
+    var _playState: IJKMPMoviePlaybackState = .stopped
+    var playState: IJKMPMoviePlaybackState {
+        set(newState){
+            _playState = newState
+            self.setPlayButtonState()
+        }
+        get{
+            return _playState
+        }
+    }
+    
+    var _backgroundView: UIView?
+    var backgroundView: UIView {
+        get{
+            if _backgroundView == nil {
+                _backgroundView = UIView.init()
+                _backgroundView?.isUserInteractionEnabled = true
+                _backgroundView?.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
+                insertSubview(_backgroundView!, at: 0)
+                
+                _backgroundView!.snp.makeConstraints({ (make) in
+                    make.edges.equalTo(self)
+                })
+            }
+            return _backgroundView!
+        }
+    }
+
+    var _panRecognizer: UIPanGestureRecognizer?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        registerGestureRecognizer()
+        registerTimer()
 
         self.setBackButton()
 
@@ -113,7 +150,7 @@ class VideoPlayerControl: UIControl {
         })
         
         totalDurationLabel = UILabel.init()
-        totalDurationLabel?.textColor = UIColor.gray
+        totalDurationLabel?.textColor = UIColor.white.withAlphaComponent(0.5)
         totalDurationLabel?.font = UIFont.systemFont(ofSize: CGFloat(totalDurationLabelH))
         totalDurationLabel?.textAlignment = NSTextAlignment.left
         totalDurationLabel?.text = "/00:00"
@@ -127,7 +164,7 @@ class VideoPlayerControl: UIControl {
         })
         
         currentTimeLabel = UILabel.init()
-        currentTimeLabel?.textColor = UIColor.gray
+        currentTimeLabel?.textColor = UIColor.white.withAlphaComponent(0.5)
         currentTimeLabel?.font = UIFont.systemFont(ofSize: CGFloat(totalDurationLabelH))
         currentTimeLabel?.textAlignment = NSTextAlignment.right
         currentTimeLabel?.text = "00:00"
@@ -163,7 +200,7 @@ class VideoPlayerControl: UIControl {
 
         progressSlider?.snp.makeConstraints({ (make) in
             make.left.equalTo((playButton?.snp.right)!).offset(progressSliderLeft)
-            make.right.equalTo((currentTimeLabel?.snp.left)!).offset(-progressSliderLeft)
+            make.right.equalTo((currentTimeLabel?.snp.left)!).offset(-progressSliderRight)
             make.bottom.equalTo(self)
             make.height.equalTo(39)
         })
@@ -184,6 +221,9 @@ class VideoPlayerControl: UIControl {
                              selector: #selector(refreshPlayerControl),
                              userInfo: nil,
                              repeats: true)
+        
+        showOverlayView(show: true)
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -225,10 +265,10 @@ class VideoPlayerControl: UIControl {
         videoPlayerControlDelegate?.pause()
     }
     
-    func setPlayButton(playbackState: IJKMPMoviePlaybackState) {
-        if playbackState == IJKMPMoviePlaybackState.stopped ||
-            playbackState == IJKMPMoviePlaybackState.paused ||
-            playbackState == IJKMPMoviePlaybackState.interrupted {
+    func setPlayButtonState() {
+        if playState == IJKMPMoviePlaybackState.stopped ||
+            playState == IJKMPMoviePlaybackState.paused ||
+            playState == IJKMPMoviePlaybackState.interrupted {
             playButton?.isHidden = false
             pauseButton?.isHidden = true
         }else {
