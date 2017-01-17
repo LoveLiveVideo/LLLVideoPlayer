@@ -14,6 +14,7 @@
 #import "SVPlayerSlider.h"
 #import "SHProgressView.h"
 #import "PlayerSeekView.h"
+#import "SHVoumeBrightSlider.h"
 
 #import "UIColor+.h"
 #import "UIImageExtend.h"

@@ -98,21 +98,31 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
         case UIGestureRecognizerState.changed:
             let translation: CGPoint = sender.translation(in: self)
             let location: CGPoint = sender.location(in: self)
-            //上下
-            if fabs(translation.y) > fabs(translation.x) {
-                return
+            //左右
+            if fabs(translation.y) < fabs(translation.x) {
+                //秒
+                let swipeTime: TimeInterval = TimeInterval(translation.x)/5.0
+                var endPlayTime = (mediaPlayback?.currentPlaybackTime)! + swipeTime
+                endPlayTime = endPlayTime > 0.0 ? endPlayTime : 0.0
+                
+                let seekOrientation = translation.x >= 0.0 ? SeekViewIconOrientation.forward : SeekViewIconOrientation.backward
+                
+                playerSeekView.update(withPlaybackTime: CGFloat(endPlayTime), duration: CGFloat((mediaPlayback?.duration)!), orientation: seekOrientation)
+                playerSeekView.center = CGPoint.init(x: self.bounds.size.width/2.0, y: self.bounds.size.height/2.0)
+                
+                currentPlayTime = endPlayTime
+            }else if (fabs(translation.y) > fabs(translation.x) && fabs(location.x) < self.bounds.size.width/2) {
+      
+                UIScreen.main.brightness -= (translation.y / 10) * 0.02
+                
+                brightSlider.updateValue(UIScreen.main.brightness)
+                
+            }else if (fabs(translation.y) > fabs(translation.x) && fabs(location.x) > self.bounds.size.width/2) {
+                
+//                MPMusicPlayerController.applicationMusicPlayer().volume
+                
             }
-            //秒
-            let swipeTime: TimeInterval = TimeInterval(translation.x)/5.0
-            var endPlayTime = (mediaPlayback?.currentPlaybackTime)! + swipeTime
-            endPlayTime = endPlayTime > 0.0 ? endPlayTime : 0.0
-            
-            let seekOrientation = translation.x >= 0.0 ? SeekViewIconOrientation.forward : SeekViewIconOrientation.backward
 
-            playerSeekView.update(withPlaybackTime: CGFloat(endPlayTime), duration: CGFloat((mediaPlayback?.duration)!), orientation: seekOrientation)
-            playerSeekView.center = CGPoint.init(x: self.bounds.size.width/2.0, y: self.bounds.size.height/2.0)
-            
-            currentPlayTime = endPlayTime
             
             break
         case UIGestureRecognizerState.ended:

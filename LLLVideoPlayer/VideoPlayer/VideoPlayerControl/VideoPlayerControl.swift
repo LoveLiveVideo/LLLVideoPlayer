@@ -122,7 +122,23 @@ class VideoPlayerControl: UIControl {
         }
     }
     
-    
+    var _brightSlider: SHVoumeBrightSlider?
+    var brightSlider: SHVoumeBrightSlider {
+        get{
+            if _brightSlider == nil {
+                _brightSlider = SHVoumeBrightSlider.init(brightSlider: )()
+                
+                addSubview(_brightSlider!)
+                
+                _brightSlider!.snp.makeConstraints({ (make) in
+                    make.edges.equalTo(self)
+                })
+            }
+
+            
+            return _brightSlider!
+        }
+    }
 
     var _panRecognizer: UIPanGestureRecognizer?
 
