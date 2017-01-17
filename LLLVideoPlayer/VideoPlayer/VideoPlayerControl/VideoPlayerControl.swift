@@ -67,6 +67,26 @@ class VideoPlayerControl: UIControl {
         }
     }
     
+    var _currentPlayTime: TimeInterval = 0.0
+    var currentPlayTime: TimeInterval {
+        set(newState){
+            _currentPlayTime = newState
+            
+            progressSlider?.value = Float(_currentPlayTime)
+            let value: CGFloat = CGFloat(_currentPlayTime)/CGFloat((progressSlider?.maximumValue)!)
+            progressSlider?.setProcessValue(value)
+            bottomProgressSlider?.setProgress(value, animated: false)
+            
+            let minute = Int(_currentPlayTime / 60)
+            let second = Int(_currentPlayTime.truncatingRemainder(dividingBy: 60))
+            
+            currentTimeLabel?.text = String.init(format: "%02d:%02d", minute, second)
+        }
+        get{
+            return _currentPlayTime
+        }
+    }
+    
     var _backgroundView: UIView?
     var backgroundView: UIView {
         get{
@@ -83,6 +103,26 @@ class VideoPlayerControl: UIControl {
             return _backgroundView!
         }
     }
+    
+    var _playerSeekView: PlayerSeekView?
+    var playerSeekView: PlayerSeekView {
+        get{
+            if _playerSeekView == nil {
+                _playerSeekView = PlayerSeekView.init()
+                _playerSeekView?.isUserInteractionEnabled = false
+//                _playerSeekView!.snp.makeConstraints({ (make) in
+//                    make.center.equalTo(self.center)
+//                })
+            }
+            if _playerSeekView!.superview == nil {
+                addSubview(_playerSeekView!)
+            }
+
+            return _playerSeekView!
+        }
+    }
+    
+    
 
     var _panRecognizer: UIPanGestureRecognizer?
 

@@ -7,8 +7,10 @@
 //
 
 #import "PlayerSeekView.h"
-#import "TTTAttributedLabel.h"
+//#import "TTTAttributedLabel.h"
 #import "NSString+time.h"
+#import "UIColor+.h"
+#import <CoreText/CoreText.h>
 
 #define PlayerSeekView_Width 130.0f
 #define PlayerSeekView_Height 91

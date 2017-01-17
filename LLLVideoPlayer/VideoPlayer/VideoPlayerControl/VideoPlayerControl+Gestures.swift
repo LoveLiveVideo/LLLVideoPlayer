@@ -107,10 +107,19 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
             var endPlayTime = (mediaPlayback?.currentPlaybackTime)! + swipeTime
             endPlayTime = endPlayTime > 0.0 ? endPlayTime : 0.0
             
+            let seekOrientation = translation.x >= 0.0 ? SeekViewIconOrientation.forward : SeekViewIconOrientation.backward
+
+            playerSeekView.update(withPlaybackTime: CGFloat(endPlayTime), duration: CGFloat((mediaPlayback?.duration)!), orientation: seekOrientation)
+            playerSeekView.center = CGPoint.init(x: self.bounds.size.width/2.0, y: self.bounds.size.height/2.0)
             
-            [self.controlPanel.playerSeekView updateWithPlaybackTime:endPlaybackTime
-                duration:self.playerVideoDuration
-                orientation:seekOrientation];
+            currentPlayTime = endPlayTime
+            
+            break
+        case UIGestureRecognizerState.ended:
+            
+            playerSeekView.removeFromSuperview()
+            
+            seek(aTime: currentPlayTime)
             
             break
         default:
@@ -118,6 +127,16 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
         }
         
     }
+    
+    func seek(aTime: TimeInterval) {
+
+        
+        videoPlayerControlDelegate?.currentPlaybackTime(position: aTime)
+
+    }
+    
+
+    
     
 }
 
