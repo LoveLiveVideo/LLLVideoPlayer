@@ -113,14 +113,14 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
                 currentPlayTime = endPlayTime
             }else if (fabs(translation.y) > fabs(translation.x) && fabs(location.x) < self.bounds.size.width/2) {
       
+                //声音有系统ui，亮度没有方格，可以自己做一个亮度UI，bilili做法
                 UIScreen.main.brightness -= (translation.y / 10) * 0.02
                 
                 brightSlider.updateValue(UIScreen.main.brightness)
                 
             }else if (fabs(translation.y) > fabs(translation.x) && fabs(location.x) > self.bounds.size.width/2) {
                 
-//                MPMusicPlayerController.applicationMusicPlayer().volume
-                
+                mpVolumeSilder.value -= Float((translation.y / 10) * 0.02)
             }
 
             
@@ -128,7 +128,8 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
         case UIGestureRecognizerState.ended:
             
             playerSeekView.removeFromSuperview()
-            
+            brightSlider.removeFromSuperview()
+
             seek(aTime: currentPlayTime)
             
             break
@@ -144,7 +145,9 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
         videoPlayerControlDelegate?.currentPlaybackTime(position: aTime)
 
     }
-    
+
+
+
 
     
     

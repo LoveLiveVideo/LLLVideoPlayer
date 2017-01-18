@@ -110,9 +110,6 @@ class VideoPlayerControl: UIControl {
             if _playerSeekView == nil {
                 _playerSeekView = PlayerSeekView.init()
                 _playerSeekView?.isUserInteractionEnabled = false
-//                _playerSeekView!.snp.makeConstraints({ (make) in
-//                    make.center.equalTo(self.center)
-//                })
             }
             if _playerSeekView!.superview == nil {
                 addSubview(_playerSeekView!)
@@ -127,21 +124,42 @@ class VideoPlayerControl: UIControl {
         get{
             if _brightSlider == nil {
                 _brightSlider = SHVoumeBrightSlider.init(brightSlider: )()
-                
+            }
+            if _brightSlider!.superview == nil {
                 addSubview(_brightSlider!)
                 
                 _brightSlider!.snp.makeConstraints({ (make) in
                     make.edges.equalTo(self)
                 })
             }
-
-            
             return _brightSlider!
         }
     }
 
     var _panRecognizer: UIPanGestureRecognizer?
+    
+    
+    var currentDeviceVolume: Float?
+    var _mpVolumeSilder: UISlider?
+    var mpVolumeSilder: UISlider {
+        get{
+            if _mpVolumeSilder == nil {
+                let mpVolumeView: MPVolumeView = MPVolumeView()
+                for view in mpVolumeView.subviews {
+                    let uiview: UIView = view as UIView
+                    if uiview.isKind(of: NSClassFromString("MPVolumeSlider")!){
+                        _mpVolumeSilder = (uiview as! UISlider)
+                    }
+                }
+            }
+            
+            currentDeviceVolume = _mpVolumeSilder!.value
 
+            return _mpVolumeSilder!
+        }
+    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

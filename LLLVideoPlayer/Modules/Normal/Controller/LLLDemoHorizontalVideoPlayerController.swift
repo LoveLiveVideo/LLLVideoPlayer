@@ -24,9 +24,10 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
         
         let documentDirectory = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
         
-        let path: String = (documentDirectory?.appending("/212_sd_optimizing_your_app_for_multitasking_on_ipad_in_ios_9.mp4"))!
-//        let url: URL = URL.init(string: "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8")!
-        let url: URL = URL.init(fileURLWithPath: path)
+//        let path: String = (documentDirectory?.appending("/212_sd_optimizing_your_app_for_multitasking_on_ipad_in_ios_9.mp4"))!
+//        let url: URL = URL.init(fileURLWithPath: path)
+        let url: URL = URL.init(string: "http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear1/prog_index.m3u8")!
+
         let player: HorizontalVideoPlayer = HorizontalVideoPlayer.init(contentURL: url)
         player.horizontalVideoPlayerDelegate = self
         view.addSubview(player)
