@@ -31,11 +31,12 @@ class LLLDemoHorizontalVideoPlayerController: UIViewController, HorizontalVideoP
         let player: HorizontalVideoPlayer = HorizontalVideoPlayer.init(contentURL: url)
         player.horizontalVideoPlayerDelegate = self
         view.addSubview(player)
+        player.frame = CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.width*(9.0/16.0))
         
-        player.snp.makeConstraints { (make) in
-            make.top.left.right.equalTo(view)
-            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0)
-        }
+//        player.snp.makeConstraints { (make) in
+//            make.top.left.right.equalTo(view)
+//            make.height.equalTo(player.snp.width).multipliedBy(9.0/16.0)
+//        }
         
     }
     

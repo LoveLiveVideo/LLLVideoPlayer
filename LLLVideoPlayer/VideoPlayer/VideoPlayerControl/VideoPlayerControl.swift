@@ -18,9 +18,26 @@ public protocol VideoPlayerControlProtocol : NSObjectProtocol {
 
     
     func currentPlaybackTime(position: TimeInterval!)
+    
+    func willEnterInline()
 }
 
 class VideoPlayerControl: UIControl {
+    
+    enum VideoPlayerViewMode: Int {
+        case inline
+        case fullscreen
+    }
+    
+    var _viewMode: VideoPlayerViewMode = .inline
+    var viewMode: VideoPlayerViewMode {
+        set(newState){
+            _viewMode = newState
+        }
+        get{
+            return _viewMode
+        }
+    }
     
     let playButtonLeft: Float = 0
     let backButtonTop: Float = 20
@@ -352,7 +369,14 @@ class VideoPlayerControl: UIControl {
     }
     
     func switchButtonTap(sender: UIButton) -> Void {
-        videoPlayerControlDelegate?.goBack()
+        if viewMode == .inline {
+           self.switchView(toMode: .fullscreen, completetion: { 
+            
+           })
+        }else {
+        
+        }
+        
     }
     
     func progressSliderTouchDown(sender: UISlider) -> Void {

@@ -20,28 +20,31 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     var horizontalVideoPlayerDelegate: HorizontalVideoPlayerProtocol?
     var ffPlayer: IJKFFMoviePlayerController?
     var videoPlayerControl: VideoPlayerControl?
-    
+    var backgroundView: UIView?
+
     init!(contentURL aUrl: URL!){
         super.init(frame: CGRect.zero)
         
         installNotificationObservers()
         
-        let backgroundView: UIView = UIView.init()
-        backgroundView.backgroundColor = UIColor.black
-        addSubview(backgroundView)
+        self.backgroundColor = UIColor.green
         
-        backgroundView.snp.makeConstraints({ (make) in
-            make.edges.equalTo(self)
+        backgroundView = UIView.init()
+        backgroundView?.backgroundColor = UIColor.black
+        addSubview(backgroundView!)
+        
+        backgroundView?.snp.makeConstraints({ (make) in
+            make.top.left.bottom.right.equalTo(self)
         })
         
         let options: IJKFFOptions = IJKFFOptions.byDefault()
         ffPlayer = IJKFFMoviePlayerController.init(contentURL: aUrl, with: options)
         ffPlayer?.scalingMode = IJKMPMovieScalingMode.aspectFit
-        addSubview((ffPlayer?.view)!)
+//        addSubview((ffPlayer?.view)!)
         
-        ffPlayer?.view.snp.makeConstraints { (make) in
-            make.edges.equalTo(self)
-        }
+//        ffPlayer?.view.snp.makeConstraints { (make) in
+//            make.edges.equalTo(self)
+//        }
         
         
         videoPlayerControl = VideoPlayerControl.init(frame: CGRect.zero)
@@ -114,6 +117,39 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
     func pause() {
         ffPlayer?.pause()
     }
+    
+    
+    func willEnterInline() {
+        var toFrame: CGRect = UIScreen.main.bounds
+        let toWidth: CGFloat = toFrame.size.height
+        let toHeight: CGFloat = toFrame.size.width
+//        toFrame.size = CGSize.init(width: toWidth, height: toHeight)
+        
+        
+        let animationDuration: TimeInterval = UIApplication.shared.statusBarOrientationAnimationDuration
+        
+        UIView.animate(withDuration: animationDuration, animations: {
+            
+            var angle: CGFloat = CGFloat(M_PI_2)
+            if UIApplication.shared.statusBarOrientation == UIInterfaceOrientation.landscapeLeft {
+                angle *= -1
+            }
+//            UIDevice.current.orientation = UIDeviceOrientation.landscapeRight
+            UIApplication.shared.statusBarOrientation = UIInterfaceOrientation.landscapeRight
+            
+            self.transform = CGAffineTransform.init(rotationAngle: angle)
+//            self.frame = toFrame
+
+        }) { (finish) in
+//            self.backgroundView?.frame = toFrame
+        }
+        
+        
+
+    }
+    
+        
+    
 }
 
 

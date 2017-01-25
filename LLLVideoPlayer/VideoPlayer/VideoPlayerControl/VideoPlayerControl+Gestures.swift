@@ -146,7 +146,28 @@ extension VideoPlayerControl : UIGestureRecognizerDelegate{
 
     }
 
+    func switchView(toMode: VideoPlayerViewMode, completetion: () -> ()) {
+        if viewMode == toMode {
+            return
+        }
+        
+        switch toMode {
+        case .inline:
+//            videoPlayerControlDelegate?.willEnterInline()
+            break
+        case .fullscreen:
+//            videoPlayerControlDelegate?.willEnterInline()
+            break
+        default:
+            break
+        }
+        
+        videoPlayerControlDelegate?.willEnterInline()
 
+    
+    }
+    
+    
 
 
     
