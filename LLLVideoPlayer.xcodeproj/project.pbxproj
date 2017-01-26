@@ -15,6 +15,7 @@
 		582D6EDE1E239B5600C07D13 /* LLLDemoVideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6ED71E239B5600C07D13 /* LLLDemoVideoPlayerController.swift */; };
 		582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6ED91E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift */; };
 		582D6EE61E239E0700C07D13 /* HorizontalVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */; };
+		5853FEC01E399C4400671D01 /* VideoPlayerDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5853FEBF1E399C4400671D01 /* VideoPlayerDefine.swift */; };
 		5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5855F97D1E11258A0032F04B /* AppDelegate.swift */; };
 		5855F9831E11258A0032F04B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9811E11258A0032F04B /* Main.storyboard */; };
 		5855F9851E11258A0032F04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5855F9841E11258A0032F04B /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		582D6EE51E239E0700C07D13 /* HorizontalVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalVideoPlayer.swift; sourceTree = "<group>"; };
 		582D6EEF1E23A87800C07D13 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		584038D81E18CD3A003AA8B2 /* LLLVideoPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LLLVideoPlayer-Bridging-Header.h"; path = "LLLVideoPlayer/LLLVideoPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		5853FEBF1E399C4400671D01 /* VideoPlayerDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerDefine.swift; sourceTree = "<group>"; };
 		5855F97A1E11258A0032F04B /* LLLVideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLLVideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5855F97D1E11258A0032F04B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5855F9821E11258A0032F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		582D6EE01E239B5B00C07D13 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				5853FEBF1E399C4400671D01 /* VideoPlayerDefine.swift */,
 				58813EBC1E277D9C00F529AA /* VideoPlayerControl */,
 				582D6EE11E239B5B00C07D13 /* HorizontalVideoPlayer */,
 				582D6EE31E239B5B00C07D13 /* VerticalVideoPlayer */,
@@ -463,6 +466,7 @@
 				5855F97E1E11258A0032F04B /* AppDelegate.swift in Sources */,
 				582D6EDA1E239B5600C07D13 /* LLLDemoTabbarController.swift in Sources */,
 				582D6EDF1E239B5600C07D13 /* LLLDemoVideoPlayerCell.swift in Sources */,
+				5853FEC01E399C4400671D01 /* VideoPlayerDefine.swift in Sources */,
 				58813EC21E277D9C00F529AA /* SVPlayerSlider.m in Sources */,
 				588F57A21E2E35D700730F20 /* UIView+Sizes.m in Sources */,
 				58813EC11E277D9C00F529AA /* VideoPlayerControl.swift in Sources */,

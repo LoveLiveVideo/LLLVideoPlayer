@@ -40,11 +40,11 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
         let options: IJKFFOptions = IJKFFOptions.byDefault()
         ffPlayer = IJKFFMoviePlayerController.init(contentURL: aUrl, with: options)
         ffPlayer?.scalingMode = IJKMPMovieScalingMode.aspectFit
-//        addSubview((ffPlayer?.view)!)
+        addSubview((ffPlayer?.view)!)
         
-//        ffPlayer?.view.snp.makeConstraints { (make) in
-//            make.edges.equalTo(self)
-//        }
+        ffPlayer?.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(self)
+        }
         
         
         videoPlayerControl = VideoPlayerControl.init(frame: CGRect.zero)
@@ -126,6 +126,9 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
 //        toFrame.size = CGSize.init(width: toWidth, height: toHeight)
         
         
+        let xxx: AppDelegate =  UIApplication.shared.delegate as! AppDelegate
+        xxx.viewMode = .fullscreen
+        
         let animationDuration: TimeInterval = UIApplication.shared.statusBarOrientationAnimationDuration
         
         UIView.animate(withDuration: animationDuration, animations: {
@@ -138,10 +141,12 @@ class HorizontalVideoPlayer: UIView, VideoPlayerControlProtocol {
             UIApplication.shared.statusBarOrientation = UIInterfaceOrientation.landscapeRight
             
             self.transform = CGAffineTransform.init(rotationAngle: angle)
-//            self.frame = toFrame
+            self.frame = toFrame
 
         }) { (finish) in
 //            self.backgroundView?.frame = toFrame
+            UIApplication.shared.statusBarOrientation = UIInterfaceOrientation.landscapeRight
+
         }
         
         

@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var viewMode: VideoPlayerViewMode? = .inline
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -21,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        if viewMode == .fullscreen {
+            return UIInterfaceOrientationMask.landscape
+        }
+        
+        return UIInterfaceOrientationMask.portrait
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

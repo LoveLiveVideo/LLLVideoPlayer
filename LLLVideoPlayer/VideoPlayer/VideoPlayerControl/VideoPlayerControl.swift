@@ -24,11 +24,6 @@ public protocol VideoPlayerControlProtocol : NSObjectProtocol {
 
 class VideoPlayerControl: UIControl {
     
-    enum VideoPlayerViewMode: Int {
-        case inline
-        case fullscreen
-    }
-    
     var _viewMode: VideoPlayerViewMode = .inline
     var viewMode: VideoPlayerViewMode {
         set(newState){
